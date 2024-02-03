@@ -9,5 +9,8 @@
     <body>
         {{-- inclure une vue --}}
         @include('header')
+
+        <h1>ERREUR 404 !</h1>
+        <a href="{{ route('home') }}">Revenir sur le site</a>
     </body>
 </html>
