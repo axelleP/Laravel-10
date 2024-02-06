@@ -3,5 +3,5 @@
 @section('title', 'Articles')
 
 @section('content')
-    LIST
+    <h1>ERREUR 404 !</h1>
 @endsection
