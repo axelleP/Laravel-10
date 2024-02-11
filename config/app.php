@@ -98,6 +98,12 @@ return [
 
     'fallback_locale' => 'fr',
 
+
+    /*
+        currency
+    */
+    'currency' => 'EUR',
+
     /*
     |--------------------------------------------------------------------------
     | Faker Locale

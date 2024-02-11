@@ -3,11 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Article;
 
 class ArticleController extends Controller
 {
     public function showList() {
-        return view('article.list');
+        $articles = Article::all();
+        return view('article.list', ['articles' => $articles]);
     }
 
     public function showView() {
@@ -19,6 +21,7 @@ class ArticleController extends Controller
     }
 
     public function save(Request $request) {
+        var_dump($request);exit;
         return redirect('article.list');
     }
 

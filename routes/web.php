@@ -21,10 +21,12 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 
 //////////Article
 Route::get('/articles', [ArticleController::class, 'showList'])->name('article.list');
-Route::get('/article/{id}', [ArticleController::class, 'showView'])->name('article.view');
-Route::get('/article/form/{id?}', [ArticleController::class, 'showForm'])
+Route::get('/article/{id}', [ArticleController::class, 'showView'])
 ->where('id', '[0-9]+')//le paramètre id doit correspondre à la regexp
-->name('article.form');//? indique que le paramètre est facultatif
+->name('article.view');
+Route::get('/article/form/{id?}', [ArticleController::class, 'showForm'])//? indique que le paramètre est facultatif
+->where('id', '[0-9]+')
+->name('article.form');
 //utilisateur connecté
 // Route::middleware(['isConnected'])->group(function () {
     Route::post('/article/form/{id?}', [ArticleController::class, 'save'])->where('id', '[0-9]+')->name('article.save');

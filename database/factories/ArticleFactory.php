@@ -20,7 +20,7 @@ class ArticleFactory extends Factory
             'name' => fake()->word(),
             'description' => fake()->text(),
             'price' => fake()->randomFloat(2, 0, 999999.99),//2 décimales après la virgule
-            'image' => fake()->imageUrl(),//ex. : https://via.placeholder.com/640x480.png/00eeaa?text=occaecati
+            'image' => '1656001927_bb633eb9d4e4e96ba1ab.png',
         ];
     }
 }

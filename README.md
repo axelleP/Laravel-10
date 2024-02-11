@@ -19,6 +19,8 @@ Urls accessibles :
 Si on utilise pas Laravel Sanctum il faut ignorer ses migrations en ajoutant `\Laravel\Sanctum\Sanctum::ignoreMigrations();` dans la fonction register() du fichier app\Providers\AppServiceProvider.php.    
 
 ## 3) Commandes
+- créer des fichiers lang : `php artisan lang:publish`
+- charger les fichiers définis dans `vite.config.js` en mode dev : `npm run dev` 
 - quand on modifie des routes : `php artisan route:cache` et `php artisan route:clear`
 - créer un controleur : `php artisan make:controller ArticleController`
 - créer un modèle : 
@@ -45,7 +47,17 @@ Si on utilise pas Laravel Sanctum il faut ignorer ses migrations en ajoutant `\L
 - créer un seeder : `php artisan make:seeder ArticleSeeder`
 - exécuter un seeder : `php artisan db:seed --class=ArticleSeeder`
 
-## 4) Définitions
+## 4) Extension
+- Laravel Blade Snippets de Winnie Lin
+- HTML CSS Support de ecmel
+
+## 5) Définitions
 - migration : permet de sauvegarder et d'exécuter des requêtes SQL afin de maintenir la base de données à jour
-- factory : permet de créer des enregistrements factices dans une table
-- seeder : permet de créer des enregistrements factices dans une table en ligne de commande
+- factory : permet de créer des enregistrements factices dans une table => déclanchement par le code
+- seeder : permet de créer des enregistrements factices dans une table => déclenchement en ligne de commande
+- vite : outil pour compiler et regrouper des fichiers CSS et JavaScript.       
+Rque : on compile le code pour que le navigateur puisse l'interpreter 
+
+## 6) Documentation
+- faker : https://fakerphp.github.io/formatters/numbers-and-strings/
+- helpers (fonction blade, route, ...) : https://laravel.com/docs/10.x/helpers
