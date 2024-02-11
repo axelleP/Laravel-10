@@ -24,15 +24,14 @@ Route::get('/articles', [ArticleController::class, 'showList'])->name('article.l
 Route::get('/article/{id}', [ArticleController::class, 'showView'])
 ->where('id', '[0-9]+')//le paramètre id doit correspondre à la regexp
 ->name('article.view');
-Route::get('/article/form/{id?}', [ArticleController::class, 'showForm'])//? indique que le paramètre est facultatif
-->where('id', '[0-9]+')
-->name('article.form');
-//utilisateur connecté
+
+//////////utilisateur connecté
 // Route::middleware(['isConnected'])->group(function () {
+    Route::get('/article/form/{id?}', [ArticleController::class, 'showForm'])//? indique que le paramètre est facultatif
+    ->where('id', '[0-9]+')->name('article.form');
     Route::post('/article/form/{id?}', [ArticleController::class, 'save'])->where('id', '[0-9]+')->name('article.save');
     Route::delete('/article/{id}', [ArticleController::class, 'delete'])->where('id', '[0-9]+')->name('article.delete');
 // });
-
 
 ///////////Page non trouvée
 Route::fallback([ErrorController::class, 'showError404']);

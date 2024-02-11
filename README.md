@@ -14,6 +14,10 @@ Urls accessibles :
 - .env
 - `composer install` : Composer doit d'abord être installé
 - `npm install` : Node.js et npm doivent d'abord être installés
+- ajouter des fichiers lang fr :
+   - `composer require laravel-lang/common --dev`
+   - `php artisan lang:add fr`
+   - `php artisan lang:update`
 
 ### Attention
 Si on utilise pas Laravel Sanctum il faut ignorer ses migrations en ajoutant `\Laravel\Sanctum\Sanctum::ignoreMigrations();` dans la fonction register() du fichier app\Providers\AppServiceProvider.php.    
@@ -61,3 +65,4 @@ Rque : on compile le code pour que le navigateur puisse l'interpreter
 ## 6) Documentation
 - faker : https://fakerphp.github.io/formatters/numbers-and-strings/
 - helpers (fonction blade, route, ...) : https://laravel.com/docs/10.x/helpers
+- rules : https://laravel.com/docs/10.x/validation#available-validation-rules

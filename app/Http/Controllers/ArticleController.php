@@ -21,11 +21,19 @@ class ArticleController extends Controller
     }
 
     public function save(Request $request) {
-        var_dump($request);exit;
-        return redirect('article.list');
+        $request->validate(Article::getRules());
+
+        $filename = time() . '_' . bin2hex(random_bytes(10)) . '.' . $request->image->extension();
+        $request->image->move(public_path('img/article'), $filename);
+        $attributes = array_merge($request->post(), ['image' => $filename]);
+
+        $article = new Article($attributes);
+        $article->save();
+
+        return redirect('articles');
     }
 
     public function delete(Request $request) {
-        return redirect('article.list');
+        return redirect('articles');
     }
 }

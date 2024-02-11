@@ -3,7 +3,7 @@
 @section('title', __('article.list'))
 
 @section('content')
-    <a href="{{ route('article.form') }}">@lang('button.add')</a>
+    <a href="{{ route('article.form') }}">@lang('actions.add')</a>
     <br/><br/>
     <table>
         <thead>
