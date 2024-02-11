@@ -105,4 +105,5 @@ return [
     'user'            => 'Aucun utilisateur n\'a été trouvé avec cette adresse email.',
     'view'            => 'Voir',
     'yes'             => 'Oui',
+    'back'             => 'Retour',
 ];

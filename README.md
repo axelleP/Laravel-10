@@ -57,7 +57,7 @@ Si on utilise pas Laravel Sanctum il faut ignorer ses migrations en ajoutant `\L
 
 ## 5) Définitions
 - migration : permet de sauvegarder et d'exécuter des requêtes SQL afin de maintenir la base de données à jour
-- factory : permet de créer des enregistrements factices dans une table => déclanchement par le code
+- factory : permet de créer des enregistrements factices dans une table => déclenchement par le code
 - seeder : permet de créer des enregistrements factices dans une table => déclenchement en ligne de commande
 - vite : outil pour compiler et regrouper des fichiers CSS et JavaScript.       
 Rque : on compile le code pour que le navigateur puisse l'interpreter 
