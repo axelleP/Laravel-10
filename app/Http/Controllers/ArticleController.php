@@ -34,7 +34,7 @@ class ArticleController extends Controller
         $request->validate($rules);
 
         try {
-            // throw new Exception('test exception');
+            // throw new Exception('save() : test exception');
 
             $attributes = $request->post();
             if (!empty($request->image)) {
@@ -57,7 +57,17 @@ class ArticleController extends Controller
         }
     }
 
-    public function delete(Request $request) {
-        return redirect('articles');
+    public function delete(int $id) {
+        try {
+            // throw new Exception('delete() : test exception');
+            $article = Article::find($id);
+            unlink(public_path('img/article/' . $article->image));
+            $article->delete();
+
+            return redirect('articles');
+        } catch (\Exception $e) {
+            report($e->getMessage());
+            return back()->withError(__('errors.error'));
+        }
     }
 }

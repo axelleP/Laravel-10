@@ -51,6 +51,15 @@ Si on utilise pas Laravel Sanctum il faut ignorer ses migrations en ajoutant `\L
 - créer un seeder : `php artisan make:seeder ArticleSeeder`
 - exécuter un seeder : `php artisan db:seed --class=ArticleSeeder`
 
+### Laravel Breeze     
+C'est un kit d'authentification : connexion, inscription, réinitialisation du mot de passe, ...      
+
+- `composer require laravel/breeze --dev`
+- `php artisan breeze:install`
+- `php artisan migrate`
+- `npm install`
+- `npm run dev`
+
 ## 4) Extension
 - Laravel Blade Snippets de Winnie Lin
 - HTML CSS Support de ecmel

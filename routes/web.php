@@ -30,7 +30,7 @@ Route::get('/article/{id}', [ArticleController::class, 'showView'])
     Route::get('/article/form/{id?}', [ArticleController::class, 'showForm'])//? indique que le paramètre est facultatif
     ->where('id', '[0-9]+')->name('article.form');
     Route::post('/article/form/{id?}', [ArticleController::class, 'save'])->where('id', '[0-9]+')->name('article.save');
-    Route::delete('/article/{id}', [ArticleController::class, 'delete'])->where('id', '[0-9]+')->name('article.delete');
+    Route::get('/article/delete/{id}', [ArticleController::class, 'delete'])->where('id', '[0-9]+')->name('article.delete');
 // });
 
 ///////////Page non trouvée

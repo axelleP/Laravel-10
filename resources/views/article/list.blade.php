@@ -3,6 +3,13 @@
 @section('title', __('article.list'))
 
 @section('content')
+    @if(session('error'))
+        <div class="text-danger">
+            {{ session('error') }}
+        </div>
+        <br/>
+    @endif
+
     <a href="{{ route('article.form') }}">@lang('actions.add')</a>
     <br/><br/>
     {{ $articles->links() }}
