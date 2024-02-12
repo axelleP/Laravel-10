@@ -24,6 +24,9 @@ return [
     'comment'         => 'Comment',
     'confirm'         => 'Confirm',
     'connect'         => 'Connect',
+    'signin'          => 'Sign in',
+    'signout'         => 'Sign out',
+    'confirm_signout' => 'Can you confirm your disconnection ?',
     'create'          => 'Create',
     'delete'          => 'Delete',
     'detach'          => 'Detach',
@@ -105,5 +108,5 @@ return [
     'user'            => 'We can\'t find a user with that email address.',
     'view'            => 'View',
     'yes'             => 'Yes',
-    'back'             => 'Back',
+    'back'            => 'Back',
 ];

@@ -1,6 +1,9 @@
 <?php
 
+declare(strict_types=1);
+
 return [
+    'list' => 'Articles',
     'view' => 'Article',
     'list' => 'Liste d\'articles',
     'form' => 'Formulaire article',
@@ -8,4 +11,6 @@ return [
     'description' => 'Description',
     'price' => 'Prix',
     'image' => 'Image',
+    'successful_create' => 'Article crée avec succès',
+    'successful_update' => 'Article modifié avec succès',
 ];

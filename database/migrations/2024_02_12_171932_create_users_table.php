@@ -11,15 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('articles', function (Blueprint $table) {
+        Schema::create('users', function (Blueprint $table) {
             $table->charset = 'utf8';
             $table->collation = 'utf8_general_ci';
 
             $table->id();
-            $table->string('name', 50);
-            $table->text('description');
-            $table->decimal('price');
-            $table->string('image');
+            $table->string('role', 50);
+            $table->string('username', 50);
+            $table->string('email', 50)->unique();
+            $table->string('password');
             $table->timestamps();//crée les champs created_at et updated_at
         });
     }
@@ -29,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('article');
+        Schema::dropIfExists('users');
     }
 };

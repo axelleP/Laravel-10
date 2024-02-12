@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Article;
-use Exception;
 
 class ArticleController extends Controller
 {
@@ -50,7 +49,8 @@ class ArticleController extends Controller
             $article->fill($attributes);
             $article->save();
 
-            return redirect('articles');
+            $flashMessage = (!empty($id)) ? __('article.successful_update') : __('article.successful_create');
+            return redirect('articles')->with('success', $flashMessage);;
         } catch (\Exception $e) {
             report($e->getMessage());
             return back()->withError(__('errors.error'));

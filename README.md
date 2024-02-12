@@ -18,6 +18,22 @@ Urls accessibles :
    - `composer require laravel-lang/common --dev`
    - `php artisan lang:add fr`
    - `php artisan lang:update`
+- authentification : 
+   - config\auth.php :       
+   ```php
+         'users' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\User::class,
+         ],
+   ```
+
+### Laravel Breeze     
+C'est un kit d'authentification : connexion, inscription, réinitialisation du mot de passe, mise à jour profil, ...      
+
+- `composer require laravel/breeze --dev`      
+- `php artisan breeze:install` : exemples d'options choisis => blade, no, 0       
+
+⚠️ Il faut l'installer juste après l'installation de laravel sinon ça écrase certains de nos fichiers comme routes/web.php.
 
 ### Attention
 Si on utilise pas Laravel Sanctum il faut ignorer ses migrations en ajoutant `\Laravel\Sanctum\Sanctum::ignoreMigrations();` dans la fonction register() du fichier app\Providers\AppServiceProvider.php.    
@@ -50,14 +66,6 @@ Si on utilise pas Laravel Sanctum il faut ignorer ses migrations en ajoutant `\L
 ### Seeder
 - créer un seeder : `php artisan make:seeder ArticleSeeder`
 - exécuter un seeder : `php artisan db:seed --class=ArticleSeeder`
-
-### Laravel Breeze     
-C'est un kit d'authentification : connexion, inscription, réinitialisation du mot de passe, mise à jour profil, ...      
-
-- `composer require laravel/breeze --dev`      
-- `php artisan breeze:install` : exemples d'options choisis => blade, no, 0       
-
-⚠️ Il faut l'installer juste après l'installation de laravel sinon ça écrase certains de nos fichiers comme routes/web.php.
 
 ## 4) Extension
 - Laravel Blade Snippets de Winnie Lin

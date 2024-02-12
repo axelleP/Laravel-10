@@ -14,3 +14,10 @@ th, td {
 .text-danger {
     color: red;
 }
+
+.alert-success {
+    background-color: lightgreen;
+    padding: 0.5%;
+    border: solid 1px green;
+    font-weight: bold;
+}

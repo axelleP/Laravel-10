@@ -24,6 +24,9 @@ return [
     'comment'         => 'Commentaire',
     'confirm'         => 'Confirmer',
     'connect'         => 'Connecter',
+    'signin'          => 'Se connecter',
+    'signout'         => 'Se déconnecter',
+    'confirm_signout' => 'Confirmez-vous votre déconnexion ?',
     'create'          => 'Créer',
     'delete'          => 'Supprimer',
     'detach'          => 'Détacher',
@@ -105,5 +108,5 @@ return [
     'user'            => 'Aucun utilisateur n\'a été trouvé avec cette adresse email.',
     'view'            => 'Voir',
     'yes'             => 'Oui',
-    'back'             => 'Retour',
+    'back'            => 'Retour',
 ];
