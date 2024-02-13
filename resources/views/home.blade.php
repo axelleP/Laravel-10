@@ -9,6 +9,10 @@
     @endauth
     <br/><br/>
 
+    @if(!empty($joke))
+        {{ $joke }}
+    @endif
+
     @if ($errors->any() && config('app.env') == 'local')
         <div class="text-danger">
             <ul>

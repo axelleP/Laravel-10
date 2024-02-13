@@ -7,7 +7,9 @@ Lancer WampServer avec PHP à partir de la version 8.1.
 
 Urls accessibles :       
 - soit celle donnée par l'exécution de la commande `php artisan serve` : http://127.0.0.1:8000/
-- soit celle que l'on a configuré en vhost : http://laravel-10-training/
+- soit celle que l'on a configuré en vhost : http://laravel-10-training/     
+
+Lancer VITE en mode dev : `npm run dev`.    
 
 ## 2) Configuration
 - /config
@@ -46,6 +48,8 @@ Si on utilise pas Laravel Sanctum il faut ignorer ses migrations en ajoutant `\L
 - créer un modèle : 
    - `php artisan make:model Article`
    - avec une migration : `php artisan make:model Article --migration`
+- créer une commande : `php artisan make:command GetJoke` 
+- lancer une commande : `php artisan app:get-joke`
 
 ### Migrations
 - créer une migration : `php artisan make:migration create_articles_table`
