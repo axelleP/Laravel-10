@@ -2,6 +2,11 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\ErrorController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,11 +18,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\UserController;
-use App\Http\Controllers\ArticleController;
-use App\Http\Controllers\ErrorController;
-
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Route::post('/login', [UserController::class, 'login'])->name('login');
@@ -28,6 +28,12 @@ Route::get('/articles', [ArticleController::class, 'showList'])->name('article.l
 Route::get('/article/{id}', [ArticleController::class, 'showView'])
 ->where('id', '[0-9]+')//le paramètre id doit correspondre à la regexp
 ->name('article.view');
+
+//////////Changer la langue
+Route::get('/change-locale/{locale}', function ($locale) {
+    session()->put('locale', $locale);
+    return redirect()->back();
+})->name('locale.change');
 
 //////////utilisateur connecté
 Route::middleware(['auth'])->group(function () {

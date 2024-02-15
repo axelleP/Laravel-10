@@ -50,7 +50,7 @@ class ArticleController extends Controller
             $article->save();
 
             $flashMessage = (!empty($id)) ? __('article.successful_update') : __('article.successful_create');
-            return redirect('articles')->with('success', $flashMessage);;
+            return redirect('articles')->with('success', $flashMessage);
         } catch (\Exception $e) {
             report($e->getMessage());
             return back()->withError(__('errors.error'));

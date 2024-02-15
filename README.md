@@ -50,6 +50,7 @@ Si on utilise pas Laravel Sanctum il faut ignorer ses migrations en ajoutant `\L
    - avec une migration : `php artisan make:model Article --migration`
 - créer une commande : `php artisan make:command GetJoke` 
 - lancer une commande : `php artisan app:get-joke`
+- créer un middleware : `php artisan make:middleware Localization`
 
 ### Migrations
 - créer une migration : `php artisan make:migration create_articles_table`
@@ -80,9 +81,10 @@ Si on utilise pas Laravel Sanctum il faut ignorer ses migrations en ajoutant `\L
 - factory : permet de créer des enregistrements factices dans une table => déclenchement par le code
 - seeder : permet de créer des enregistrements factices dans une table => déclenchement en ligne de commande
 - vite : outil pour compiler et regrouper des fichiers CSS et JavaScript.       
-Rque : on compile le code pour que le navigateur puisse l'interpreter 
+Rque : on compile le code pour que le navigateur puisse l'interpréter 
 
 ## 6) Documentation
 - faker : https://fakerphp.github.io/formatters/numbers-and-strings/
 - helpers (fonction blade, route, ...) : https://laravel.com/docs/10.x/helpers
+- manipuler des chaînes de caractères : https://laravel.com/docs/10.x/strings     
 - rules : https://laravel.com/docs/10.x/validation#available-validation-rules

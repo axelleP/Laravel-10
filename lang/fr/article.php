@@ -3,7 +3,6 @@
 declare(strict_types=1);
 
 return [
-    'list' => 'Articles',
     'view' => 'Article',
     'list' => 'Liste d\'articles',
     'form' => 'Formulaire article',
