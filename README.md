@@ -1,7 +1,5 @@
 # <h1 align="center">👨‍💻 Entraînement Laravel 10 👩‍💻</h1>
 
-Documentation : https://laravel.com/docs/10.x/     
-
 ## 1) Lancement
 Lancer WampServer avec PHP à partir de la version 8.1.     
 
@@ -41,16 +39,17 @@ C'est un kit d'authentification : connexion, inscription, réinitialisation du m
 Si on utilise pas Laravel Sanctum il faut ignorer ses migrations en ajoutant `\Laravel\Sanctum\Sanctum::ignoreMigrations();` dans la fonction register() du fichier app\Providers\AppServiceProvider.php.    
 
 ## 3) Commandes
-- créer des fichiers lang : `php artisan lang:publish`
 - charger les fichiers définis dans `vite.config.js` en mode dev : `npm run dev` 
 - quand on modifie des routes : `php artisan route:cache` et `php artisan route:clear`
+- créer des fichiers lang : `php artisan lang:publish`
 - créer un controleur : `php artisan make:controller ArticleController`
 - créer un modèle : 
    - `php artisan make:model Article`
    - avec une migration : `php artisan make:model Article --migration`
 - créer une commande : `php artisan make:command GetJoke` 
-- lancer une commande : `php artisan app:get-joke`
 - créer un middleware : `php artisan make:middleware Localization`
+- créer un composant : `php artisan make:component formNewsletter`
+- lancer une commande : `php artisan app:get-joke`
 
 ### Migrations
 - créer une migration : `php artisan make:migration create_articles_table`
@@ -84,7 +83,9 @@ Si on utilise pas Laravel Sanctum il faut ignorer ses migrations en ajoutant `\L
 Rque : on compile le code pour que le navigateur puisse l'interpréter 
 
 ## 6) Documentation
+- Laravel : https://laravel.com/docs/10.x/  
 - faker : https://fakerphp.github.io/formatters/numbers-and-strings/
 - helpers (fonction blade, route, ...) : https://laravel.com/docs/10.x/helpers
 - manipuler des chaînes de caractères : https://laravel.com/docs/10.x/strings     
 - rules : https://laravel.com/docs/10.x/validation#available-validation-rules
+- envoyer un email avec PHPMailer : https://github.com/PHPMailer/PHPMailer 

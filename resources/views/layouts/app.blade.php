@@ -23,6 +23,10 @@
 
         @yield('content')
         
+        <br/><br/>
+
+        <x-form-newsletter/>
+
         @yield('scripts')
     </body>
 </html>

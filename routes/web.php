@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\PHPMailerController;
 use App\Http\Controllers\ErrorController;
 
 /*
@@ -23,6 +24,8 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::post('/login', [UserController::class, 'login'])->name('login');
 Route::get('/logout', [UserController::class, 'logout'])->name('logout');
 
+Route::post('/subscribeNewsletter', [PHPMailerController::class, 'subscribeNewsletter'])->name('subscribeNewsletter');
+
 //////////Article
 Route::get('/articles', [ArticleController::class, 'showList'])->name('article.list');
 Route::get('/article/{id}', [ArticleController::class, 'showView'])
@@ -35,7 +38,7 @@ Route::get('/change-locale/{locale}', function ($locale) {
     return redirect()->back();
 })->name('locale.change');
 
-//////////utilisateur connecté
+//////////Utilisateur connecté
 Route::middleware(['auth'])->group(function () {
     Route::get('/article/form/{id?}', [ArticleController::class, 'showForm'])//? indique que le paramètre est facultatif
     ->where('id', '[0-9]+')->name('article.form');
