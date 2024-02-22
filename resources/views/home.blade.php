@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Accueil')
+@section('title', __('menu.home'))
 
 @section('content')
     @lang('home.welcome')
@@ -29,7 +29,7 @@
             <table>
                 <tr>
                     <th><label for="email">@lang('user.email')</label></th>
-                    <td><input type="text" name="email" id="email"></td>
+                    <td><input type="email" name="email" id="email"></td>
                 </tr>
                 <tr>
                     <th><label for="password">@lang('user.password')</label></th>

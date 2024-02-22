@@ -40,7 +40,7 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
 
-    public static function getRules() {
+    public static function getRules(): array {
         return [
             'email' => ['required', 'email'],
             'password' => ['required'],

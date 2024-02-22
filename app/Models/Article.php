@@ -18,11 +18,11 @@ class Article extends Model
         'image'
     ];
 
-    public static function getRules() {
+    public static function getRules(): array {
         return [
             'name' => 'required|max:50',
             'description' => 'required',
-            'price' => 'required|decimal:0,2|min:0',
+            'price' => 'required|decimal:0,2|min:0|max:999999.99',
             'image' => 'required|image'
         ];
     }

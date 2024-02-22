@@ -1,5 +1,16 @@
 # <h1 align="center">👨‍💻 Entraînement Laravel 10 👩‍💻</h1>
 
+## Exemples de code
+- migration : [2024_02_03_153848_create_articles_table.php](database/migrations/2024_02_03_153848_create_articles_table.php)
+- factory : [ArticleFactory.php](database/factories/ArticleFactory.php)
+- model : [Article.php](app/Models/Article.php)
+- view - liste article : [list.blade.php](resources/views/article/list.blade.php)
+- view - formulaire article : [form.blade.php](resources/views/article/form.blade.php)
+- controller - article : [ArticleController.php](app/Http/Controllers/ArticleController.php)
+- controller - envoi d'un email : [PHPMailerController.php](app/Http/Controllers/PHPMailerController.php)
+- command : [GetJoke.php](app/Console/Commands/GetJoke.php)
+___
+
 ## 1) Lancement
 Lancer WampServer avec PHP à partir de la version 8.1.     
 
@@ -49,6 +60,9 @@ Si on utilise pas Laravel Sanctum il faut ignorer ses migrations en ajoutant `\L
 - créer une commande : `php artisan make:command GetJoke` 
 - créer un middleware : `php artisan make:middleware Localization`
 - créer un composant : `php artisan make:component formNewsletter`
+- test unitaire
+   - créer un test unitaire : `php artisan make:test CalculTest --unit`
+   - lancer les tests unitaires : `php artisan test`
 - lancer une commande : `php artisan app:get-joke`
 
 ### Migrations
@@ -71,7 +85,7 @@ Si on utilise pas Laravel Sanctum il faut ignorer ses migrations en ajoutant `\L
 - créer un seeder : `php artisan make:seeder ArticleSeeder`
 - exécuter un seeder : `php artisan db:seed --class=ArticleSeeder`
 
-## 4) Extension
+## 4) Extensions
 - Laravel Blade Snippets de Winnie Lin
 - HTML CSS Support de ecmel
 

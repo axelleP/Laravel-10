@@ -3,5 +3,5 @@
 @section('title', 'Articles')
 
 @section('content')
-    <h1>ERREUR 404 !</h1>
+    <h1>@lang('errors.error404')</h1>
 @endsection
