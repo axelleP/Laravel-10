@@ -174,6 +174,9 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+
+        //new service provider
+        App\Providers\EmailServiceProvider::class,
     ])->toArray(),
 
     /*

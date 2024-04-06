@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>@lang('email.content.subject', ['app_name' => env('APP_NAME')])</title>
+        <title>@lang('email.content.subject', ['app_name' => config('app.name')])</title>
     </head>
     <body>
         @lang('email.content.welcome')

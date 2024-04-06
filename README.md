@@ -1,14 +1,22 @@
 # <h1 align="center">👨‍💻 Entraînement Laravel 10 👩‍💻</h1>
 
 ## Exemples de code
-- migration : [2024_02_03_153848_create_articles_table.php](database/migrations/2024_02_03_153848_create_articles_table.php)
-- factory : [ArticleFactory.php](database/factories/ArticleFactory.php)
+- database :
+   - migration : [2024_02_03_153848_create_articles_table.php](database/migrations/2024_02_03_153848_create_articles_table.php)
+   - factory : [ArticleFactory.php](database/factories/ArticleFactory.php)
+   - seeder : [ArticleSeeder.php](database/seeders/ArticleSeeder.php)
 - model : [Article.php](app/Models/Article.php)
-- view - liste article : [list.blade.php](resources/views/article/list.blade.php)
-- view - formulaire article : [form.blade.php](resources/views/article/form.blade.php)
+- middleware - changement de langue : [Localization.php](app/Http/Middleware/Localization.php)
+- view :
+   - liste article : [list.blade.php](resources/views/article/list.blade.php)
+   - formulaire article : [form.blade.php](resources/views/article/form.blade.php)
 - controller - article : [ArticleController.php](app/Http/Controllers/ArticleController.php)
-- controller - envoi d'un email : [PHPMailerController.php](app/Http/Controllers/PHPMailerController.php)
-- command : [GetJoke.php](app/Console/Commands/GetJoke.php)
+- command : 
+   - command : [GetJoke.php](app/Console/Commands/GetJoke.php)
+   - schedule : [console.php](routes/console.php)
+- envoi d'un email avec PHPMailer :
+   - service provider : [EmailServiceProvider.php](app/Providers/EmailServiceProvider.php)
+   - service container : [EmailSender.php](app/Services/EmailSender.php)
 ___
 
 ## 1) Lancement
@@ -64,6 +72,7 @@ Si on utilise pas Laravel Sanctum sous Laravel 10, il faut ignorer ses migration
    - créer un test unitaire : `php artisan make:test CalculTest --unit`
    - lancer les tests unitaires : `php artisan test`
 - lancer une commande : `php artisan app:get-joke`
+- créer un service provider : `php artisan make:provider EmailServiceProvider`
 
 ### Migrations
 - créer une migration : `php artisan make:migration create_articles_table`
@@ -84,6 +93,11 @@ Si on utilise pas Laravel Sanctum sous Laravel 10, il faut ignorer ses migration
 ### Seeder
 - créer un seeder : `php artisan make:seeder ArticleSeeder`
 - exécuter un seeder : `php artisan db:seed --class=ArticleSeeder`
+
+### Schedule
+- configurer les tâches planifiées dans \routes\console.php
+- déployer les tâches planifiées sur son serveur
+- tester le planificateur manuellement : `php artisan schedule:run`
 
 ## 4) Extensions
 - Laravel Blade Snippets de Winnie Lin

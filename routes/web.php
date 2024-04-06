@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ArticleController;
-use App\Http\Controllers\PHPMailerController;
+use App\Http\Controllers\EmailController;
 use App\Http\Controllers\ErrorController;
 
 /*
@@ -24,7 +24,7 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::post('/login', [UserController::class, 'login'])->name('login');
 Route::get('/logout', [UserController::class, 'logout'])->name('logout');
 
-Route::post('/subscribeNewsletter', [PHPMailerController::class, 'subscribeNewsletter'])->name('subscribeNewsletter');
+Route::post('/subscribeNewsletter', [EmailController::class, 'subscribeNewsletter'])->name('subscribeNewsletter');
 
 //////////Article
 Route::get('/articles', [ArticleController::class, 'showList'])->name('article.list');
