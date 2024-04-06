@@ -47,7 +47,7 @@ C'est un kit d'authentification : connexion, inscription, réinitialisation du m
 ⚠️ Il faut l'installer juste après l'installation de laravel sinon ça écrase certains de nos fichiers comme routes/web.php.
 
 ### Attention
-Si on utilise pas Laravel Sanctum il faut ignorer ses migrations en ajoutant `\Laravel\Sanctum\Sanctum::ignoreMigrations();` dans la fonction register() du fichier app\Providers\AppServiceProvider.php.    
+Si on utilise pas Laravel Sanctum sous Laravel 10, il faut ignorer ses migrations en ajoutant `\Laravel\Sanctum\Sanctum::ignoreMigrations();` dans la fonction register() du fichier app\Providers\AppServiceProvider.php.    
 
 ## 3) Commandes
 - charger les fichiers définis dans `vite.config.js` en mode dev : `npm run dev` 
