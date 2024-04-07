@@ -6,7 +6,9 @@
    - factory : [ArticleFactory.php](database/factories/ArticleFactory.php)
    - seeder : [ArticleSeeder.php](database/seeders/ArticleSeeder.php)
 - model : [Article.php](app/Models/Article.php)
-- middleware - changement de langue : [Localization.php](app/Http/Middleware/Localization.php)
+- middleware :
+   - changement de langue : [Localization.php](app/Http/Middleware/Localization.php)
+   - Rate Limiting - limitation du nombre de connexions utilisateur : [RateLimitLogin.php](app/Http/Middleware/RateLimitLogin.php)
 - view :
    - liste article : [list.blade.php](resources/views/article/list.blade.php)
    - formulaire article : [form.blade.php](resources/views/article/form.blade.php)

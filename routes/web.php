@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Middleware\RateLimitLogin;
+
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ArticleController;
@@ -21,7 +23,7 @@ use App\Http\Controllers\ErrorController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
-Route::post('/login', [UserController::class, 'login'])->name('login');
+Route::post('/login', [UserController::class, 'login'])->name('login')->middleware(RateLimitLogin::class);;
 Route::get('/logout', [UserController::class, 'logout'])->name('logout');
 
 Route::post('/subscribeNewsletter', [EmailController::class, 'subscribeNewsletter'])->name('subscribeNewsletter');

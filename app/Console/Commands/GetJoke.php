@@ -41,8 +41,8 @@ class GetJoke extends Command
             sleep(2);
             
             $response = Http::get('http://official-joke-api.appspot.com/random_joke');
-            $data = json_decode($response->getBody());
-            $joke = $data->setup . ' : ' . $data->punchline;
+            $data = $response->json();
+            $joke = $data['setup'] . ' : ' . $data['punchline'];
             Cache::put('joke', $joke, now()->addDay());
 
             $endTime = microtime(true);

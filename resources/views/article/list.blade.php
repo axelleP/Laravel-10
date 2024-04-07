@@ -47,7 +47,7 @@
                     <td>{{ $article->name }}</td>
                     <td>{{ $article->description }}</td>
                     <td>{{ Number::currency($article->price, in: config('app.currency'), locale: config('app.locale')) }}</td>
-                    <td><img src="{{ asset('img/article/' . $article->image) }}"/></td>
+                    <td><img src="{{ asset('storage/articles/' . $article->image) }}"/></td>
                     <td><a href="{{ route('article.view', $article->id) }}"><img width="48" height="48" src="https://img.icons8.com/color/48/search--v1.png" alt="view"/></a></td>
                     @auth
                         @if(auth()->user()->role == 'admin')

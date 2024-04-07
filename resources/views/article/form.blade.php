@@ -46,7 +46,7 @@
 
         <label for="image">@lang('article.image')</label>
         @if(!empty($article->image))
-            <img id='image' src="{{ asset('img/article/' . $article->image) }}">
+            <img id='image' src="{{ asset('storage/articles/' . $article->image) }}">
         @endif
         <input type="file" name="image" id="image" class="form-control @error('image') is-invalid @enderror">
         @error('image')

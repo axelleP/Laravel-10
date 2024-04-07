@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Article;
+use Illuminate\Support\Facades\Storage;
 
 class ArticleController extends Controller
 {
@@ -26,27 +27,29 @@ class ArticleController extends Controller
         $article = (!empty($id)) ? Article::find($id) : new Article();
 
         $rules = Article::getRules();
-        if (empty($request->image) && !empty($article->image)) {
+        if ($request->missing('image') && !empty($article->image)) {
             unset($rules['image']);
         }
 
         $request->validate($rules);
 
         try {
-            // throw new Exception('save() : test exception');
-
-            $attributes = $request->post();
-            if (!empty($request->image)) {
-                if (!empty($article->image)) {
-                    unlink(public_path('img/article/' . $article->image));
+            if ($request->hasFile('image')) {
+                if (!$request->file('image')->isValid()) {
+                    throw new \Exception(__('errors.errorUpload'));
                 }
 
-                $filename = time() . '_' . bin2hex(random_bytes(10)) . '.' . $request->image->extension();
-                $request->image->move(public_path('img/article'), $filename);
-                $attributes = array_merge($request->post(), ['image' => $filename]);
+                $file = $request->file('image');
+                $filename = $file->hashName();
+                $file->storeAs('articles', $filename, 'public');
+                $request->merge(['image' => $filename]);
+
+                if (!empty($article->image)) {
+                    Storage::disk('public')->delete('articles/' . $article->image);
+                }
             }
 
-            $article->fill($attributes);
+            $article->fill($request->post());
             $article->save();
 
             $flashMessage = (!empty($id)) ? __('article.successful_update') : __('article.successful_create');
@@ -61,7 +64,7 @@ class ArticleController extends Controller
         try {
             // throw new Exception('delete() : test exception');
             $article = Article::find($id);
-            unlink(public_path('img/article/' . $article->image));
+            Storage::disk('public')->delete('articles/' . $article->image);
             $article->delete();
 
             return redirect('articles');

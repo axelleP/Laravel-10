@@ -23,6 +23,13 @@
         </div>
     @endif
 
+    @if(session('authFailed'))
+        <div class="text-danger">
+            {{ session('authFailed') }}
+        </div>
+        <br/>
+    @endif
+    
     @guest
         <form action="{{ route('login') }}" method="POST" enctype="multipart/form-data">
             @csrf

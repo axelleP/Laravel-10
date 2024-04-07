@@ -12,12 +12,12 @@ class EmailController extends Controller
 
         if (!$send['isSend']) {
             if (isset($send['errorInfo'])) {
-                return back()->with('failed', $send['error'])->withErrors($send['errorInfo']);
+                return back()->with('failed', $send['error_subscribeNewsletter'])->withErrors($send['errorInfo']);
             } else {
-                return back()->with('error', $send['error']);
+                return back()->with('error_subscribeNewsletter', $send['error']);
             }
         } else {
-            return back()->with('success', __('email.info.delivery_success'));
+            return back()->with('success_subscribeNewsletter', __('email.info.delivery_success'));
         }
     }
 }

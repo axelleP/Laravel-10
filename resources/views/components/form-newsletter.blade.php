@@ -1,13 +1,13 @@
-@if(session('success'))
+@if(session('success_subscribeNewsletter'))
     <div class="alert-success">
-        {{ session('success') }}
+        {{ session('success_subscribeNewsletter') }}
     </div>
     <br/>
 @endif
 
-@if(session('error'))
+@if(session('error_subscribeNewsletter'))
     <div class="text-danger">
-        {{ session('error') }}
+        {{ session('error_subscribeNewsletter') }}
     </div>
     <br/>
 @endif
