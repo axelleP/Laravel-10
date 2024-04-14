@@ -61,8 +61,12 @@ Si on utilise pas Laravel Sanctum sous Laravel 10, il faut ignorer ses migration
 
 ## 3) Commandes
 - charger les fichiers définis dans `vite.config.js` en mode dev : `npm run dev` 
-- quand on modifie des routes : `php artisan route:cache` et `php artisan route:clear`
+- cache - exemples :     
+   - `php artisan cache:clear`
+   - `php artisan route:cache` et `php artisan route:clear`
+   - `php artisan view:cache` et `php artisan view:clear`
 - créer des fichiers lang : `php artisan lang:publish`
+- CRUD : `php artisan make:controller ArticleController --resource`
 - créer un controleur : `php artisan make:controller ArticleController`
 - créer un modèle : 
    - `php artisan make:model Article`

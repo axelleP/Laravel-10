@@ -18,7 +18,7 @@
         </tr>
         <tr>
             <th>@lang('article.image')</th>
-            <td><img src="{{ asset('img/article/' . $article->image) }}"/></td>
+            <td><img src="{{ asset('storage/articles/' . $article->image) }}"/></td>
         </tr>
     </table>
 

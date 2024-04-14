@@ -38,7 +38,6 @@ class GetJoke extends Command
             $startTime = microtime(true);
             $this->info('Début du traitement');
             // throw new Exception('test exception');
-            sleep(2);
             
             $response = Http::get('http://official-joke-api.appspot.com/random_joke');
             $data = $response->json();
