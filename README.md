@@ -1,4 +1,4 @@
-# <h1 align="center">👨‍💻 Entraînement Laravel 10 👩‍💻</h1>
+# <h1 align="center">👨‍💻 Laravel 10 👩‍💻</h1>
 
 ## Exemples de code
 - database :
